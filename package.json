@@ -6,6 +6,19 @@
   "scripts": {
     "test": "mocha"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clasen/LemonLog.git"
+  },
+  "keywords": [
+    "logging",
+    "log",
+    "debug",
+    "console log",
+    "error handling",
+    "development",
+    "tools"
+  ],
   "author": "Martin Clasen",
   "license": "MIT",
   "bugs": {
