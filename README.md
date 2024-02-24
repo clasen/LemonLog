@@ -41,11 +41,30 @@ Welcome to **LemonLog**! The zesty, easy-to-use logging solution for your Node.j
    Handle logs with your own custom logic:
 
    ```javascript
-   function myCustomCallback(data) {
-     // Do something cool here
+   async function someAsyncFunction(fail, cbk) {
+
+      if (fail) {
+         cbk({ return: "error" }, null);
+      } else {
+         cbk(null, { return: "ok" });
+      }
    }
 
-   logger.exec(myCustomCallback);
+   // Custom callback example
+   someAsyncFunction(false, log.callback("Custom success message"));
+
+   someAsyncFunction(true, log.callback("Custom error message"));
+
+
+   // Exec example
+   someAsyncFunction(false, log.exec(result => {
+      log.debug('Success:', result);
+   }));
+
+   someAsyncFunction(true, log.exec(result => {
+      log.debug('Error:', result);
+   }));
+
    ```
 
 ## 🍋 Why LemonLog?
