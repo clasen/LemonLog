@@ -1,6 +1,6 @@
 {
   "name": "lemonlog",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "🍋 LemonLog - Simplify Your Node.js Logging 🚀",
   "main": "index.js",
   "scripts": {
