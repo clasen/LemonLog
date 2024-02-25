@@ -1,6 +1,6 @@
 const debug = require('debug');
 
-class LemonLog {
+class LemonLogClass {
     constructor(name) {
         const pad = '-----------------';
         this.name = name;
@@ -12,7 +12,7 @@ class LemonLog {
         };
 
         // Set up console bindings
-        this.setupConsoleBindings();
+        this._setupConsoleBindings();
     }
 
     info(...args) {
@@ -35,7 +35,7 @@ class LemonLog {
         return (str + pad).substring(0, pad.length);
     }
 
-    setupConsoleBindings() {
+    _setupConsoleBindings() {
         const { info, debug, warn, error } = this.loggers;
         info.log = console.info.bind(console);
         debug.log = console.log.bind(console);
@@ -70,6 +70,15 @@ class LemonLog {
                 cbk(r);
             }
         };
+    }
+}
+
+// Wrapper function to support both constructor and function usage
+function LemonLog(path) {
+    if (this instanceof LemonLog) {
+        return new LemonLogClass(path);
+    } else {
+        return new LemonLogClass(path);
     }
 }
 

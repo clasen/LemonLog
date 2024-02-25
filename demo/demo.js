@@ -1,6 +1,4 @@
-const Log = require('../index');
-
-const log = new Log('myApp');
+const log = require('../index')('myApp');
 
 log.info('This is an info message', { a: 1 });
 log.debug('This is a debug message');
