@@ -1,11 +1,8 @@
 {
   "name": "lemonlog",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "🍋 LemonLog - Simplify Your Node.js Logging 🚀",
   "main": "index.js",
-  "scripts": {
-    "test": "mocha"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/clasen/LemonLog.git"
@@ -25,12 +22,6 @@
     "url": "https://github.com/clasen/LemonLog/issues"
   },
   "homepage": "https://github.com/clasen/LemonLog#readme",
-  "devDependencies": {
-    "mocha": "^10.2.0"
-  },
-  "directories": {
-    "test": "test"
-  },
   "dependencies": {
     "debug": "^4.3.4"
   }

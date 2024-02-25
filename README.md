@@ -23,17 +23,42 @@ Welcome to **LemonLog**! The zesty, easy-to-use logging solution for your Node.j
    First, require and create a new instance of LemonLog in your project:
 
    ```javascript
-   const LemonLog = require('lemonlog');
-   const log = new LemonLog('MyApp');
+   const log = require('lemonlog')('MyApp');
    ```
 
    Then, log away:
 
    ```javascript
    log.info('This is an info message!');
-   log.debug('Here’s something you might find interesting...');
-   log.warn('Warning! Warning! ⚠️');
-   log.error('Oops! Something went wrong. 🚨');
+   log.debug('Here’s something you might find interesting...', { emoji: 🎁 });
+   log.warn('Warning! Warning! 🚨');
+   log.error('Oops! Something went wrong. 🔥');
+   ```
+
+   Use DEBUG to filter logs:
+   
+   ```bash
+   $ DEBUG=* node demo/demo.js
+   myApp:info ------ This is an info message { a: 1 } +0ms
+   myApp:debug ----- This is a debug message +0ms
+   myApp:warn ------ This is a warning +0ms
+   myApp:error ----- This is an error +0ms
+   myApp:debug ----- [ 'Custom success message' ]
+   myApp:debug ----- { return: 'ok' } +0ms
+   myApp:error ----- { return: 'error' }
+   myApp:error ----- [ 'Custom error message' ]
+   myApp:error ----- null +0ms
+   myApp:debug ----- Success: { return: 'ok' } +1ms
+   myApp:error ----- { return: 'error' }
+   myApp:error ----- null +1ms
+
+   $ DEBUG=myApp:error* node demo/demo.js
+   myApp:error ----- This is an error +0ms
+   myApp:error ----- { return: 'error' }
+   myApp:error ----- [ 'Custom error message' ]
+   myApp:error ----- null +0ms
+   myApp:error ----- { return: 'error' }
+   myApp:error ----- null +1ms
    ```
 
 3. **Customize Your Callbacks**
