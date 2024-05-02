@@ -31,8 +31,10 @@ Welcome to **LemonLog**! The zesty, easy-to-use logging solution for your Node.j
    ```javascript
    log.info('This is an info message!');
    log.debug('Here’s something you might find interesting...', { emoji: 🎁 });
+   log.inspect('Inspecting a deeply nested object', { a: { b: { c: { d: 1 } } } });
    log.warn('Warning! Warning! 🚨');
    log.error('Oops! Something went wrong. 🔥');
+
    ```
 
    Use DEBUG to filter logs:
@@ -41,6 +43,12 @@ Welcome to **LemonLog**! The zesty, easy-to-use logging solution for your Node.j
    $ DEBUG=* node demo/demo.js
    myApp:info ------ This is an info message { a: 1 } +0ms
    myApp:debug ----- This is a debug message +0ms
+   myApp:inspect --- [
+   myApp:inspect ---   'This is a full json depth inspect message',
+   myApp:inspect ---   {
+   myApp:inspect ---     a: { b: { c: { d: 1 } } }
+   myApp:inspect ---   }
+   myApp:inspect --- ] +0ms
    myApp:warn ------ This is a warning +0ms
    myApp:error ----- This is an error +0ms
    myApp:debug ----- [ 'Custom success message' ]

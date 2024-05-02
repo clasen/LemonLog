@@ -1,4 +1,5 @@
 const debug = require('debug');
+const util = require('util');
 
 class LemonLogClass {
     constructor(name) {
@@ -7,6 +8,7 @@ class LemonLogClass {
         this.loggers = {
             info: debug(this.rpad(`${name}:info `, pad)),
             debug: debug(this.rpad(`${name}:debug `, pad)),
+            inspect: debug(this.rpad(`${name}:inspect `, pad)),
             warn: debug(this.rpad(`${name}:warn `, pad)),
             error: debug(this.rpad(`${name}:error `, pad)),
         };
@@ -17,6 +19,10 @@ class LemonLogClass {
 
     info(...args) {
         this.loggers.info(...args);
+    }
+
+    inspect(...args) {
+        this.loggers.inspect(util.inspect(args, { showHidden: false, depth: null, colors: true }))
     }
 
     debug(...args) {
@@ -36,17 +42,20 @@ class LemonLogClass {
     }
 
     _setupConsoleBindings() {
-        const { info, debug, warn, error } = this.loggers;
+        const { info, debug, warn, error, inspect } = this.loggers;
         info.log = console.info.bind(console);
         debug.log = console.log.bind(console);
+        inspect.log = console.log.bind(console);
         warn.log = console.log.bind(console);
         error.log = console.error.bind(console);
+        
 
         // Optional: Set colors
         info.color = 6;
         debug.color = 2;
         warn.color = 5;
         error.color = 1;
+        inspect.color = 12;
     }
 
     callback() {
