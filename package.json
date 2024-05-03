@@ -1,7 +1,7 @@
 {
   "name": "lemonlog",
-  "version": "1.0.6",
-  "description": "🍋 LemonLog - Simplify Your Node.js Logging 🚀",
+  "version": "1.0.8",
+  "description": "🍋 LemonLog - Simplify Your Node.js Logging",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -14,7 +14,10 @@
     "console log",
     "error handling",
     "development",
-    "tools"
+    "tools",
+    "lemon",
+    "inspect",
+    "full depth"
   ],
   "author": "Martin Clasen",
   "license": "MIT",

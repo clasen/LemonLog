@@ -1,4 +1,4 @@
-# 🍋 LemonLog - Simplify Your Node.js Logging 🚀
+# 🍋 LemonLog - Simplify Your Node.js Logging
 
 Welcome to **LemonLog**! The zesty, easy-to-use logging solution for your Node.js applications. Whether you're debugging your latest feature or keeping an eye on production issues, LemonLog is here to brighten your day (and your console) with colorful, structured logs. 🌈
 
@@ -9,6 +9,7 @@ Welcome to **LemonLog**! The zesty, easy-to-use logging solution for your Node.j
 - **Console Bindings**: LemonLog ties neatly into the console, ensuring that your logs are both beautiful and functional.
 - **Custom Callbacks**: Handle errors and debug information your way with custom callbacks.
 - **Flexible**: Whether you're writing a quick script or a complex application, LemonLog adapts to your needs.
+- **Full Depth Inspect**: Allows you to inspect deeply nested objects with ease. You can quickly and clearly see the structure of your data.
 
 ## 🚀 Getting Started 
 
