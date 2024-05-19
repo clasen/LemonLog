@@ -1,6 +1,6 @@
 {
   "name": "lemonlog",
-  "version": "1.0.8",
+  "version": "1.1.2",
   "description": "🍋 LemonLog - Simplify Your Node.js Logging",
   "main": "index.js",
   "repository": {
