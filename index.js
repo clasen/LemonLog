@@ -83,11 +83,11 @@ class LemonLogClass {
 }
 
 // Wrapper function to support both constructor and function usage
-function LemonLog(path) {
+function LemonLog(name) {
     if (this instanceof LemonLog) {
-        return new LemonLogClass(path);
+        return this;
     } else {
-        return new LemonLogClass(path);
+        return new LemonLogClass(name);
     }
 }
 

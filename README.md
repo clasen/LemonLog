@@ -27,11 +27,17 @@ Welcome to **LemonLog**! The zesty, easy-to-use logging solution for your Node.j
    const log = require('lemonlog')('MyApp');
    ```
 
+   or
+   ```javascript
+   import LemonLog from 'lemonlog';
+   const log = new LemonLog('MyApp');
+   ```
+
    Then, log away:
 
    ```javascript
    log.info('This is an info message!');
-   log.debug('Here’s something you might find interesting...', { emoji: 🎁 });
+   log.debug('Here’s something you might find interesting...', { emoji: "🎁" });
    log.inspect('Inspecting a deeply nested object', { a: { b: { c: { d: 1 } } } });
    log.warn('Warning! Warning! 🚨');
    log.error('Oops! Something went wrong. 🔥');
