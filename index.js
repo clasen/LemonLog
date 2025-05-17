@@ -8,7 +8,8 @@ class LemonLogClass {
         this.loggers = {
             info: debug(this.rpad(`${name}:info `, pad)),
             debug: debug(this.rpad(`${name}:debug `, pad)),
-            inspect: debug(this.rpad(`${name}:inspect `, pad)),
+            // inspect: debug(this.rpad(`${name}:inspect `, pad)),
+            inspect: debug(''),
             warn: debug(this.rpad(`${name}:warn `, pad)),
             error: debug(this.rpad(`${name}:error `, pad)),
         };
@@ -84,7 +85,7 @@ class LemonLogClass {
 
 // Wrapper function to support both constructor and function usage
 function LemonLog(name) {
-    if (this instanceof LemonLog) {
+    if (this instanceof LemonLogClass) {
         return this;
     } else {
         return new LemonLogClass(name);

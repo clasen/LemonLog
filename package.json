@@ -1,6 +1,6 @@
 {
   "name": "lemonlog",
-  "version": "1.1.2",
+  "version": "1.1.8",
   "description": "🍋 LemonLog - Simplify Your Node.js Logging",
   "main": "index.js",
   "repository": {
@@ -17,7 +17,8 @@
     "tools",
     "lemon",
     "inspect",
-    "full depth"
+    "full depth",
+    "clasen"
   ],
   "author": "Martin Clasen",
   "license": "MIT",
@@ -26,6 +27,6 @@
   },
   "homepage": "https://github.com/clasen/LemonLog#readme",
   "dependencies": {
-    "debug": "^4.3.4"
+    "debug": "^4.1.1"
   }
 }
